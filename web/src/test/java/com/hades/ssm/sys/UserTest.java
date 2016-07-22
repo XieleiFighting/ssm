@@ -1,6 +1,7 @@
 package com.hades.ssm.sys;
 
 import org.junit.Test;
+import org.mybatis.spring.SqlSessionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hades.ssm.model.entity.User;
@@ -16,10 +17,19 @@ public class UserTest extends BaseTest {
 	public void testFindById() {
 		try {
 			User user = userService.findById(1L);
+			User user2 = userService.findById(1L);
 			System.out.println(user);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+	}
+	
+	@Test
+	public void testSave() {
+		try {
+			userService.saveAndUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

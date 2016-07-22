@@ -12,6 +12,11 @@
           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
           http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
+	<!-- 使用ehcache缓存 -->
+	<bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:ehcache.xml" />
+	</bean>
+	
 	<context:property-placeholder location="classpath:resources.properties"/>
 	
 	<!-- 扫描注解Bean -->
@@ -55,6 +60,7 @@
 	<!-- mybatis配置 -->  
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
         <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis.xml" />
         <property name="mapperLocations" value="classpath:com/hades/ssm/model/dao/*Mapper.xml"></property>
     </bean>
     
@@ -68,5 +74,5 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
     	<property name="dataSource" ref="dataSource" />
     </bean>
-	
+
 </beans>

@@ -5,7 +5,8 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
 @ContextConfiguration(locations = {
-		"classpath:spring-config.xml"
+		"classpath:spring-config.xml",
+		"classpath:spring-test-config.xml"
 })
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 public abstract class BaseTest extends AbstractTransactionalJUnit4SpringContextTests {

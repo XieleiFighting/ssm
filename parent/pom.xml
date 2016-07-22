@@ -37,6 +37,7 @@
         
 		<spring.version>4.1.7.RELEASE</spring.version>
 		<mybatis.version>3.2.8</mybatis.version>
+		<ehcache.version>2.6.6</ehcache.version>
 		<druid.version>1.0.18</druid.version>
 
 		<servlet.version>3.0.1</servlet.version>
@@ -158,6 +159,18 @@
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.1</version>
+		</dependency>
+		
+		<!-- ehcache -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-ehcache</artifactId>
+		    <version>1.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>net.sf.ehcache</groupId>
+		    <artifactId>ehcache-core</artifactId>
+		    <version>${ehcache.version}</version>
 		</dependency>
 
 		<!-- 数据库连接druid -->

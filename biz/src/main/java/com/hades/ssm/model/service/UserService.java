@@ -5,4 +5,6 @@ import com.hades.ssm.model.entity.User;
 public interface UserService {
 
 	User findById(Long id);
+	
+	void saveAndUpdate();
 }

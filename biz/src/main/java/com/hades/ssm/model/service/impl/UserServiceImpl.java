@@ -17,5 +17,12 @@ public class UserServiceImpl implements UserService {
 		
 		return userDao.selectByPrimaryKey(id);
 	}
+	@Override
+	public void saveAndUpdate() {
+		User user = new User();
+		user.setUsername("xielei");
+		user.setPassword("111111");
+		userDao.insert(user);
+	}
 
 }

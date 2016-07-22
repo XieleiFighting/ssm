@@ -1,7 +1,12 @@
 package com.hades.ssm.model.entity;
 
-public class User {
-    private Long id;
+import java.io.Serializable;
+
+public class User implements Serializable {
+
+	private static final long serialVersionUID = 2064409914922713503L;
+
+	private Long id;
 
     private String username;
 
