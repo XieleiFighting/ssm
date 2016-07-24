@@ -1,12 +1,14 @@
 .classpath
 .project
 .settings/
+.idea/
 target/
 
 # Package Files #
 *.jar
 *.war
 *.class
+*.iml
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
