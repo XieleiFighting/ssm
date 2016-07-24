@@ -7,22 +7,33 @@ import com.hades.ssm.model.dao.UserDao;
 import com.hades.ssm.model.entity.User;
 import com.hades.ssm.model.service.UserService;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDao userDao;
+
+
 	@Override
-	public User findById(Long id) {
-		
-		return userDao.selectByPrimaryKey(id);
-	}
-	@Override
-	public void saveAndUpdate() {
-		User user = new User();
-		user.setUsername("xielei");
-		user.setPassword("111111");
-		userDao.insert(user);
+	public User saveUser(User user) {
+		userDao.saveUser(user);
+		return user;
 	}
 
+	@Override
+	public User findUserByUsername(String username) {
+		return userDao.getUserByUsername(username);
+	}
+
+	@Override
+	public User findUserById(Long id) {
+		return null;
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		return userDao.getAllUsers();
+	}
 }

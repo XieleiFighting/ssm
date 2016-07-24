@@ -2,9 +2,13 @@ package com.hades.ssm.model.service;
 
 import com.hades.ssm.model.entity.User;
 
-public interface UserService {
+import java.util.List;
 
-	User findById(Long id);
+public interface UserService {
 	
-	void saveAndUpdate();
+	User saveUser(User user);
+
+	User findUserByUsername(String username);
+	User findUserById(Long id);
+	List<User> getAllUsers();
 }
